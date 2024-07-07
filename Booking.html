@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Booking.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Booking</title>
+</head>
+<body>
+    
+        <nav class="navbar" role="navigation" aria-label="main navigation" navbar=" is-fixed-top" style="background-color: #1a1a1a;">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="Parking.html">
+              <h2>Parking</h2>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+            <div class="navbar-menu" id="navMenu"></div>
+          </div>
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a href="Booking.html" class="navbar-item">
+                    Appointment
+                  </a>
+                  <a href="LogIn.html" class="navbar-item">LOG IN</a>
+                  <a href="SignIn.html" class="button is-warning">Sign Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="h2">Choose The parking</div>
+    <div class="container">
+       
+        <div class="card">
+            <div class="image">
+                <img src="photo_٢٠٢٤-٠٢-٢٦_١٥-١١-٤٤.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">Albaramka</h2>
+                <p>Al_halbouni Street,next to Al_Maamoun international center</p>
+                <span class="subtitle" style="color: rgb(6, 231, 55);">..Open Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <a href="Appoint.html">Booking Now</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="photo_٢٠٢٤-٠٢-٢٦_١٥-١١-٤٠.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">Alwafaa</h2>
+                <p>Al_Hejaz, In exchange for building the tower</p>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="photo_٢٠٢٤-٠٢-٢٦_١٥-١١-٤٣.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">Alasdkaa</h2>
+                <p>Qudsaya, After Qudsaya arch</p>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="cc.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">barneah</h2>
+                <p>Al_Kanawat, Abd alrahman naseer street</p>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="photo_٢٠٢٤-٠٢-٢٦_١٥-٤٣-٠٦.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">Dakdok</h2>
+                <p>Masaken_Alharas,</p>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">Damascus Car</h2>
+                <p>Al_mohajreen, Shura Flight</p>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+// Add a click event on each of them
+$navbarBurgers.forEach(el => {
+  el.addEventListener('click', () => {
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+  });
+});
+});
+</script>

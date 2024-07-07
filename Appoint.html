@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="Appoint.css">
+    <title>Make Appointment</title>
+    <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation" navbar=" is-fixed-top">
+        <div class="navbar-brand" >
+          <a class="navbar-item" href="Parking.html">
+            <h2>Parking</h2>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu"  aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+          <div class="navbar-menu" id="navMenu"></div>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="Booking.html" class="navbar-item">
+                  Appointment
+                </a>
+                <a href="LogIn.html" class="navbar-item">LOG IN</a>
+                <div class="buttons">
+                <a href="SignIn.html" class="button is-warning">Sign Up</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="h2">Choose The parking</div>
+      <div class="container">
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave1">PL<sub>1</sub></h2>
+                <span class="subtitle" style="font-weight: 900;">
+                    <i>Open Now....</i>
+                    </span><br>
+                <h6>from <span class="hour">5AM</span> to <span class="hour">10PM</span></h6>
+                    <button style="background-color:rgb(26, 170, 98); color: black; font-weight: 900;" onclick="saveValue(1)" >Booking Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave2">PC<sub>1</sub></h2>
+                <span class="subtitle" style="font-weight: 900;">
+                <i>Open Now....</i>
+                </span><br>
+                <h6>from <span class="hour">10AM</span> to <span class="hour">7PM</span></h6>
+                    <button style="background-color:rgb(26, 170, 98); color: black; font-weight: 900;" onclick="saveValue(2)">Booking Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave3">PR<sub>1</sub></h2>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">7AM</span> to <span class="hour">5PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave4">PL<sub>2</sub></h2>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">5PM</span> to <span class="hour">12AM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave5">PC<sub>2</sub></h2>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">10AM</span> to <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="https://www.teflcourse.net/uploads/pakistan-featured-image.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2 id="valueToSave6">PR<sub>2</sub></h2>
+                <span class="subtitle">..Close Now..</span><br>
+                <h6>from <span class="hour">12PM</span> to 
+                    <span class="hour">10PM</span></h6>
+                    <button>Booking Now</button>
+            </div>
+        </div>
+    </div>
+   
+    <form name="info">
+        <label for="num">number car:</label>
+        <input type="number" name="num" value="" required><br><br>
+        <label for="span">Parkink Name :</label>
+        <span id="displayedValue" name="span"></span><br><br>
+        <input type="button" name="show" style="translate: 40%;
+        background-color: orange;" value="Done" onclick="information()">
+    </form>
+</body>
+</html>
+
+<script>
+    
+   function information() {
+    var number = document.forms["info"]["num"].value;
+    var spanContent = document.getElementById("displayedValue").textContent;
+
+    // Redirect to another page with the entered information as a query parameter
+    window.location.href = "anotherpage.html?num=" + encodeURIComponent(number) + "&name=" + encodeURIComponent(spanContent);
+}
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Add a click event on each of them
+$navbarBurgers.forEach(el => {
+  el.addEventListener('click', () => {
+
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+});
+
+var h2Element;
+var spanElement;
+var savedValue;
+function saveValue(index) {
+    h2Element = document.getElementById("valueToSave" + index);
+    spanElement = document.getElementById("displayedValue");
+
+    if (h2Element) {
+        var valueToSave = h2Element.innerText.trim();
+        if (valueToSave !== "") {
+            savedValue = " " + valueToSave;
+            spanElement.innerText = savedValue;
+        } else {
+            alert("Error: Value not provided.");
+        }
+    } else {
+        alert("Error: Element not found.");
+    }
+}
+
+</script>
+font-family: none;
+    font-weight: 900;
+    font-size: 30px;

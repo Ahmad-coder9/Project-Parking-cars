@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="parkingIndex.css">
+  <title>parking cars</title>
+  <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+    <nav class="navbar" role="navigation" aria-label="main navigation" navbar=" is-fixed-top">
+      
+      <div class="navbar-brand">
+        <a class="navbar-item" href="Parking.html">
+          <h2>Parking</h2>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu"  aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu" id="navMenu"></div>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="Booking.html" class="navbar-item">
+                Appointment
+              </a>
+              <a href="LogIn.html" class="navbar-item">LOG IN</a>
+              <div class="buttons">
+              <a href="SignIn.html" class="button is-warning">Sign Up</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+
+    <div class="container is-desktop" style="max-width: 100%;">
+    <div class="title1">
+      Parking
+    </div>
+    <div id="banner">
+      <img class="banner-img" src="cc.jpg">
+      <div class="arrow">
+        <i class="fa-solid fa-arrow-left arrow_left "></i>
+        <i class="fa-solid fa-arrow-right arrow_right "></i>
+      </div>
+      <div class="dots"></div>
+    </div>
+ 
+  
+  <div class="h1">Information</div>
+  <div class="wrapper">
+    <form>
+        <div class="input-box">
+            <select name="select" class="inputt" >
+              <option value="Damascus">Damascus</option>
+              <option value="Aleppo">Aleppo</option>
+              <option value="Homs">Homs</option>
+            </select>
+            <i class='bx bxs-user'></i>
+        </div>
+        
+        <div class="input-box">
+          <i class='bx bxs-lock-alt'></i>
+          <div class="input"><br>
+          <label style="color: #fcf9f9;font-weight: 500;font-size: 16px"> time Of Booking Hours:</label>
+         <button style="margin-right: 10px;
+         margin-left: 10px;
+          width: 30px;
+          border: inherit;
+          background-color: #fffffe;
+          " id="subtract">-
+         </button>
+          <span id="output">01</span>
+        <button id="add" style="margin-left: 10px;
+          width: 30px;
+          border: inherit;
+          background-color: #fffffe;">+
+        </button>
+      </div>
+
+      <div class="inputs">
+        <label class="label-title" >count time booking:</label>
+        <input type="time" name="time">
+      </div>
+      <button type="submit" class="btn">
+        <a href="Booking.html">DONE</a>
+      </button>
+        </div>
+    </form>
+</div>
+
+  <footer class="footer">
+    <div class="container row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">visit website</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="logo" style="margin: 20px;">
+          <img src="aa.jpg" alt="" width="40%"></div>
+      </div>
+    </div>
+  </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  // script increment 1
+  let add = document.querySelector("#add");
+  let subract=document.querySelector("#subtract");
+  let result=1;
+add.addEventListener("click", function () {
+  let output = document.querySelector("#output");
+  let result = Number(output.innerText) + 1;
+  if (result > 9999) {
+    result ++;
+  }
+  output.innerText = result;
+});
+subract.addEventListener("click", function () {
+  let output = document.querySelector("#output");
+  let result = Number(output.innerText) - 1;
+
+  if (result < 1) {
+    result = 1;
+  }
+  output.innerText = result;
+});
+  //end script increment 1
+   // script increment 2
+   const plus =document.querySelector(".plus")
+   const minus =document.querySelector(".minus")
+   const num =document.querySelector(".num");
+
+   let a=1;
+   plus.addEventListener("click",()=>{
+    a++;
+    a=( a < 10 ) ? "0" +a:a;
+    num.innerHTML=a;
+    console.log("a");
+   });
+
+   minus.addEventListener("click",()=>{
+    if(a>1){
+      a--;
+      a=( a < 10 ) ? "0" +a : a;
+    num.innerHTML=a;
+    }
+    
+   });
+    //end script increment 2
+
+    //start navbar
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  });
+      //end navbar
+
+  const slides = [
+    {
+      imageUrl: "dd.jpg",
+    },
+    {
+      imageUrl: "aa.jpg",
+
+    },
+    {
+      imageUrl: "cc.jpg",
+    },
+    {
+      imageUrl: "bb.jpg",
+    },
+  ];
+
+  
+
+  const dotsContainer = document.querySelector(".dots");
+
+  const arrowRight = document.querySelector(".arrow_right");
+  const arrowLeft = document.querySelector(".arrow_left");
+
+  
+  const img = document.querySelector(".banner-img");
+  const tagLine = document.querySelector("#banner p");
+
+  
+  let index = 0;
+
+  
+  function createDot(i) {
+
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+
+    dotsContainer.appendChild(dot);
+
+    
+    dot.addEventListener("click", () => {
+      updateCarousel(i);
+    });
+
+   
+    if (i === index) {
+      dot.classList.add("dot_selected");
+    }
+  }
+
+  function displayDots() {
+
+    for (let i = 0; i < slides.length; i++) {
+      createDot(i);
+    }
+  }
+
+ 
+  function updateCarousel(i) {
+
+    
+    const selectDots = document.querySelectorAll(".dots .dot");
+
+    selectDots[index].classList.remove("dot_selected");
+
+    index = i;
+
+    img.src = slides[index].imageUrl;
+    tagLine.innerHTML = slides[index].tagLine;
+
+    selectDots[index].classList.add("dot_selected");
+  }
+
+  
+  function slide(direction) {
+
+    const selectDots = document.querySelectorAll(".dots .dot");
+
+    selectDots[index].classList.remove("dot_selected");
+
+    if (direction === "right") {
+      index = (index + 1) % slides.length;
+    } else {
+      index = (index - 1 + slides.length) % slides.length;
+    }
+
+    img.src = slides[index].imageUrl;
+    tagLine.innerHTML = slides[index].tagLine;
+
+    selectDots[index].classList.add("dot_selected");
+  }
+
+  function slideRight() {
+    slide("right");
+  }
+
+  function slideLeft() {
+    slide("left");
+  }
+
+  function autoSlide() {
+    autoSlideInterval = setInterval(() => {
+      slideRight();
+    }, 3000);  
+  }
+
+  arrowRight.addEventListener("click", slideRight);
+  arrowLeft.addEventListener("click", slideLeft);
+
+  
+  dotsContainer.addEventListener("click", () => {
+    clearInterval(autoSlideInterval);
+    autoSlide();
+  });
+
+  
+  function preloadImages() {
+    for (let i = 0; i < slides.length; i++) {
+      const imageObj = new Image();
+      imageObj.src = slides[i].imageUrl;
+    }
+  }
+
+  
+  preloadImages();
+
+ 
+  autoSlide();
+
+  
+  displayDots();
+
+</script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js">
+
+</script>
